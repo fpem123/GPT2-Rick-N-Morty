@@ -13,10 +13,12 @@
 <script type="text/javascript">
     let time_obj = undefined;
     let flag = undefined;
+    let chars = undefined;
 
     window.onload = () => {
         time_obj = document.getElementById("timer");
         flag = false;
+        chars = ["Rick", "Morty", "Jerry", "Summer", "Beth", "Narrator"];
     }
 
     function double_submit_check() {
@@ -74,7 +76,6 @@
             data = data[0];
 
             const table = document.getElementById('generated');
-            let chars = ["Rick", "Morty", "Jerry", "Summer", "Beth"];
 
             // 기존 내용 삭제
             while (table.hasChildNodes()) {
@@ -90,9 +91,8 @@
                 text.style.width = '70%';
                 text.style.height = '60pt';
 
-                // 사진 확장자를 통일해서 간단하게 만들어야 할 듯.
                 if (chars.includes(data[i][0])) {
-                    name.innerHTML = `<td><img src="../static/${data[i][0]}.png" width="35" height="50"><br>${data[i][0]}</td>`;
+                    name.innerHTML = `<td><img src="../static/${data[i][0]}.png" width="50" height="70"><br>${data[i][0]}</td>`;
                 } else {
                     name.innerHTML = `<td><br>${data[i][0]}</td>`;
                 }

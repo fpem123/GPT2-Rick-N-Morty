@@ -7,7 +7,10 @@ app = Flask(__name__)
 # Get post request page.
 @app.route('/Rick-N-Morty', methods=['POST'])
 def generate():
-    return jsonify({'0': [['Rick', 'hey'], ['Morty', 'What?'], ['Jerry', '매롱'], ['Rick', 'stop'], ['Beth', "What? What is this? I don't wanna die! stop!"], ['Smith', "That's crazy"]]})
+    return jsonify({'0': [['Rick', 'hey'], ['Morty', 'What?'], ['Jerry', '매롱'], ['Rick', 'stop'],
+                          ['Narrator', '[Rick charges the laser cannon.]'],
+                          ['Beth', "What? What is this? I don't wanna die! stop!"],
+                          ['Smith', "That's crazy"]]})
 
 
 ##

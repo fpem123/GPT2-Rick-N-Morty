@@ -9,3 +9,5 @@ Summer: http://vignette2.wikia.nocookie.net/rickandmorty/images/5/53/Summer_Wide
 Beth: http://vignette4.wikia.nocookie.net/rickandmorty/images/5/58/Beth_Smith.png
 
 Jerry: http://vignette3.wikia.nocookie.net/rickandmorty/images/5/5d/Jerry_S01E11_Sad.JPG
+
+Bender(Narrator): https://www.imdb.com/title/tt0779827/mediaviewer/rm1190328832/

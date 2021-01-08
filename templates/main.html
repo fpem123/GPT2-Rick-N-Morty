@@ -77,8 +77,10 @@
 
             const table = document.getElementById('generated');
 
-            for (let i = 0; i <= table.rows.length; i++)
-                table.deleteRow(-1);
+            // 기존 내용 삭제
+            while (table.hasChildNodes()) {
+                table.removeChild(table.lastChild);
+            }
 
             for (i in data) {
                 const row = table.insertRow();

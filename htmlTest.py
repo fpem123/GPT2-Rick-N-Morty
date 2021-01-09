@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 
 ##
-# Get post request page.
+# Send test script.
 @app.route('/Rick-N-Morty', methods=['POST'])
 def generate():
     return jsonify({'0': [['Rick', 'hey'], ['Morty', 'What?'], ['Jerry', '매롱'], ['Rick', 'stop'],

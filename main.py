@@ -41,6 +41,8 @@ handler = Thread(target=handle_requests_by_batch).start()
 
 
 ##
+# GPT-2 generator.
+# Make Rick and Morty script.
 def mk_rnm_script(name, text, length):
     try:
         text = name + ': ' + text.strip()

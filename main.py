@@ -70,13 +70,12 @@ def mk_rnm_script(name, text, length):
             rnm_story = tokenizer.decode(sample_output, skip_special_tokens=True).split('\n')
 
             for i in range(len(rnm_story)):
-                if ':' in rnm_story[i]:
+                if rnm_story[i][0] in ['(', '[']:
+                    rnm_story[i] = ['Narrator', rnm_story[i]]
+                elif ':' in rnm_story[i]:
                     rnm_story[i] = rnm_story[i].split(':')
-                elif rnm_story[i]:
-                    if rnm_story[i][0] not in ['(', '[']:
-                        rnm_story[i] = [rnm_story[i-1][0], rnm_story[i]]
-                    else:
-                        rnm_story[i] = ['Narrator', rnm_story[i]]
+                else:
+                    rnm_story[i] = [rnm_story[i - 1][0], rnm_story[i]]
 
             result[idx] = rnm_story
 

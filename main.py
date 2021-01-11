@@ -123,8 +123,8 @@ def generate():
 # Queue deadlock error debug page.
 @app.route('/queue_clear')
 def queue_clear():
-    with requests_queue.mutex:
-        requests_queue.queue.clear()
+    while not requests_queue.empty():
+        requests_queue.get()
 
     return "Clear", 200
 

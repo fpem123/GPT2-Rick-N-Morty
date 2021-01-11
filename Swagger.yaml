@@ -26,7 +26,17 @@ paths:
     post:
       requestBody:
         required: true
-        description: "This request will generate Rick and Morty script."
+        description: |
+          This request will generate Rick and Morty script.
+
+          Request body example
+
+              name: Rick
+              text: Morty! Morty!
+              length: 150
+
+
+
         content:
           multipart/form-data:
             schema:
@@ -55,10 +65,11 @@ paths:
                 type: object
                 properties:
                   number:
-                    type: "array"
+                    type: array
                     items:
-                      type: "string"
-                      format: "array"
+                      type: array
+                      items:
+                        type: string
         '400':
           description: "Bad Request Error"
         '429':

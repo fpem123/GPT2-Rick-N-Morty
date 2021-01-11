@@ -20,7 +20,7 @@ Model: https://huggingface.co/e-tony/gpt2-rnm
 
 ### ** With CLI **
 
-    curl -X POST "https://master-gpt2-rick-n-morty-fpem123.endpoint.ainize.ai/Rick-N-Morty" -H "accept: application/json" -H "Content-Type: multipart/form-data" -F "name=Rick" -F "text=Morty! Morty!" -F "length=150"
+    curl -X POST "https://master-gpt2-rick-n-morty-fpem123.endpoint.ainize.ai/Rick-N-Morty" -H "accept: application/json" -H "Content-Type: multipart/form-data" -F "name=Rick" -F "text=Hey Morty" -F "length=150"
 
 ### ** With swagger **
 

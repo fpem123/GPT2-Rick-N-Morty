@@ -34,10 +34,13 @@ def handle_requests_by_batch():
                 continue
 
             for requests in request_batch:
-                requests["output"] = mk_rnm_script(requests['input'][0], requests['input'][1], requests['input'][2])
+                try:
+                    requests["output"] = mk_rnm_script(requests['input'][0], requests['input'][1], requests['input'][2])
+                except:
+                    requests["output"] = 'Error occur in handler'
 
 
-handler = Thread(target=handle_requests_by_batch).start()
+Thread(target=handle_requests_by_batch).start()
 
 
 ##
@@ -70,7 +73,9 @@ def mk_rnm_script(name, text, length):
             rnm_story = tokenizer.decode(sample_output, skip_special_tokens=True).split('\n')
 
             for i in range(len(rnm_story)):
-                if rnm_story[i][0] in ['(', '[']:
+                if not rnm_story[i]:
+                    continue
+                elif rnm_story[i][0] in ['(', '[']:
                     rnm_story[i] = ['Narrator', rnm_story[i]]
                 elif ':' in rnm_story[i]:
                     rnm_story[i] = rnm_story[i].split(':')
@@ -83,7 +88,7 @@ def mk_rnm_script(name, text, length):
 
     except Exception as e:
         print('Error occur in script generating!', e)
-        return jsonify({'error': e}), 500
+        return 'Error occur in script generating!'
 
 
 ##
